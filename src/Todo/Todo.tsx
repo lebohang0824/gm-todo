@@ -8,6 +8,7 @@ import TodoItems from './TodoItems/TodoItems';
 export default class Todo extends React.Component {
     
     state = { items: [] }
+    counter = 0;
 
     constructor(props: any) {
         super(props);
@@ -21,7 +22,7 @@ export default class Todo extends React.Component {
         e.preventDefault();
 
         const title = e.target[0].value;
-        const id = this.state.items.length + 1;
+        const id = this.counter++;
 
         // Validate 
         if (title.trim().length < 1) {
