@@ -34,6 +34,11 @@ export default class Todo extends React.Component {
 
         // Clear
         e.target[0].value = null
+        e.target[0].focus();
+    }
+
+    saveUpdateHandler() {
+
     }
 
     updateHandler() {
@@ -49,7 +54,11 @@ export default class Todo extends React.Component {
         return (
             <div className="todo">
                 <TodoHeader onAddItem={this.addHandler} />
-                <TodoItems items={this.state.items} onDelete={this.deleteHandler} onUpdate={this.updateHandler} />
+                <TodoItems 
+                    items={this.state.items} 
+                    onDelete={this.deleteHandler} 
+                    onUpdate={this.updateHandler} 
+                />
             </div>
         );
     }

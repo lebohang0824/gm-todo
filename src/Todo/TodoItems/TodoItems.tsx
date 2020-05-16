@@ -19,7 +19,7 @@ const TodoItem = ({ item, onDelete, onUpdate }: TodoItemProps) => {
                 {item.title}
             </div>
             <div className="actions">
-                <button className="update" onClick={() => onUpdate(item.id)}>Update</button>
+                <button className="update" onClick={() => onUpdate(item.id)}>Edit</button>
                 <button className="delete" onClick={() => onDelete(item.id)}>Delete</button>
             </div>
         </div>
