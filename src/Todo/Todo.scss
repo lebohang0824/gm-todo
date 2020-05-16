@@ -45,27 +45,6 @@
             .info {
                 padding: 10px;
             }
-            .actions {
-                width: 100%;
-                padding: 5px;
-                border-radius: 5px;
-                box-sizing: border-box;
-                background-color: transparentize(#FFF, .2); 
-                button {
-                    border: none;
-                    color: #FFF;
-                    cursor: pointer;
-                    margin: 0 2.5px;
-                    padding: 6px 10px;
-                    border-radius: 4px;
-                }
-                .update {
-                    background-color: orange;
-                } 
-                .delete {
-                    background-color: red;
-                }             
-            }
         }     
     }
 

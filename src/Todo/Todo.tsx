@@ -41,8 +41,8 @@ export default class Todo extends React.Component {
 
     }
 
-    updateHandler() {
-
+    updateHandler(e: any) {
+        const parent  =  e.target.parentNode;
     }
 
     deleteHandler(id: number) {
