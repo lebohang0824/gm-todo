@@ -29,7 +29,10 @@
                 background-color: darken(lime, 14%);
                 &:hover {
                     background-color: darken(lime, 11%);                    
-                }         
+                }  
+                &:focus {
+                    outline: none;
+                }       
             }
         }
     }
