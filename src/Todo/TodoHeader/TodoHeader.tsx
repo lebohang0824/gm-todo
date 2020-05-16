@@ -9,7 +9,7 @@ const TodoHeader = (props: TodoHeaderProps) => {
         <div className="todo-header">
             <form onSubmit={props.onAddItem}>
                 <input type="text" placeholder="What would you like to do?" />
-                <button>Add Todo</button>
+                <button>Add Task</button>
             </form>
         </div>
     );
