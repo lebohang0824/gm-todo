@@ -1,3 +1,53 @@
 .todo {
-    
+    width: 400px;
+    margin: 5% auto;
+
+    .todo-header {
+        display: block;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        background-color: transparentize(#FFF, .5);
+        form {
+            display: grid;
+            column-gap: 5px;
+            grid-template-columns: 400px 100px;
+            input {
+                border: none;
+                margin: 10px;
+                padding: 10px 15px;
+                border-radius: 5px;
+                box-sizing: border-box;
+                &:focus {
+                    outline-color: green;
+                }
+            }
+            button {
+                border: none;
+                color: #FFF;
+                cursor: pointer;
+                border-radius: 5px; 
+                background-color: darken(lime, 14%);
+                &:hover {
+                    background-color: darken(lime, 11%);                    
+                }         
+            }
+        }
+    }
+
+    .todo-items { 
+        .todo-item {
+            border-radius: 5px;
+            margin-bottom: 5px;
+            background-color: transparentize(#FFF, .2);  
+            .info {
+                padding: 10px;
+            }
+            .actions {
+                padding: 10px;
+                border-radius: 5px;
+                background-color: transparentize(#FFF, .2);                 
+            }
+        }     
+    }
+
 }
