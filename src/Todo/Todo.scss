@@ -44,6 +44,21 @@
             background-color: transparentize(#FFF, .2);  
             .info {
                 padding: 10px;
+                position: relative;
+                .delete {
+                    top: 0px;
+                    right: 0px;
+                    cursor: pointer;
+                    border-radius: 40%;
+                    padding: 10px 15px;
+                    position: absolute;
+                    color: transparentize(red, .9);
+                    background-color: transparentize(#FFF, .8); 
+                    &:hover {
+                        color: red;
+                        background-color: transparentize(#FFF, .8);                         
+                    }
+                }
             }
         }     
     }

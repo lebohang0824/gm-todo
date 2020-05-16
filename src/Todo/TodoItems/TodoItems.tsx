@@ -16,7 +16,8 @@ const TodoItem = ({ item, onDelete, onUpdate }: TodoItemProps) => {
     return (
         <div className="todo-item">
             <div className="info">
-                {item.title}
+                <span>{item.title}</span>
+                <span className="delete" onClick={() => onDelete(item.id)}>x</span>
             </div>
         </div>
     );
