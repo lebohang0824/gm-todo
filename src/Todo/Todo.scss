@@ -56,6 +56,8 @@
                     background-color: transparentize(#FFF, .8); 
                     &:hover {
                         color: red;
+                        font-weight: bold;
+                        transition: color 1.3s;
                         background-color: transparentize(#FFF, .8);                         
                     }
                 }
