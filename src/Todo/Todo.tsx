@@ -16,6 +16,7 @@ export default class Todo extends React.Component {
         this.addHandler    = this.addHandler.bind(this);
         this.updateHandler = this.updateHandler.bind(this);
         this.deleteHandler = this.deleteHandler.bind(this);
+        this.saveUpdateHandler = this.saveUpdateHandler.bind(this);
     }
 
     addHandler(e: any) {
@@ -38,12 +39,22 @@ export default class Todo extends React.Component {
         e.target[0].focus();
     }
 
-    saveUpdateHandler() {
+    saveUpdateHandler(item: any) {
+        const tasks = this.state.items;
+        const index = tasks.findIndex((task: any) => task.id == item.id);
 
+        // New value
+        // tasks[index].title = item.title;
+
+        // update
+        this.setState({ items: tasks })
     }
 
     updateHandler(e: any) {
-        const parent  =  e.target.parentNode;
+        const parent = e.target.parentNode;
+        const grandParent = parent.parentNode;
+        parent.style.display = 'none';
+        grandParent.getElementsByClassName('todo-update-item')[0].style.display = 'block';
     }
 
     deleteHandler(id: number) {
@@ -59,6 +70,7 @@ export default class Todo extends React.Component {
                     items={this.state.items} 
                     onDelete={this.deleteHandler} 
                     onUpdate={this.updateHandler} 
+                    onSave={this.saveUpdateHandler} 
                 />
             </div>
         );
