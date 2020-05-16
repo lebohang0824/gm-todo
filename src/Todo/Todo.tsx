@@ -40,15 +40,16 @@ export default class Todo extends React.Component {
 
     }
 
-    deleteHandler() {
-
+    deleteHandler(id: number) {
+        const items = this.state.items.filter((item: any) => item.id !== id);
+        this.setState({ items });
     }
 
     render() {
         return (
             <div className="todo">
                 <TodoHeader onAddItem={this.addHandler} />
-                <TodoItems items={this.state.items} />
+                <TodoItems items={this.state.items} onDelete={this.deleteHandler} onUpdate={this.updateHandler} />
             </div>
         );
     }
