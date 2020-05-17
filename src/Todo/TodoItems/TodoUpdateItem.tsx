@@ -48,6 +48,7 @@ export default class TodoUpdateItem  extends React.Component<TodoUpdateItemProps
         const superGrandParent = grandParent.parentNode;
         superGrandParent.getElementsByClassName('info')[0].style.display = 'block';
         superGrandParent.getElementsByClassName('todo-update-item')[0].style.display = 'none';
+        this.setState({ title: this.props.item.title });
     }
 
     render() {
@@ -61,7 +62,7 @@ export default class TodoUpdateItem  extends React.Component<TodoUpdateItemProps
                 </div>
                 <div className="actions">
                     <button className="save">Save</button>
-                    <button onClick={this.onCancel} className="cancel">Cancel</button>
+                    <button type="button" onClick={this.onCancel} className="cancel">Cancel</button>
                 </div>
             </form>
         );
