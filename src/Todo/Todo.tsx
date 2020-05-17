@@ -56,6 +56,9 @@ export default class Todo extends React.Component {
         const grandParent = parent.parentNode;
         parent.style.display = 'none';
         grandParent.getElementsByClassName('todo-update-item')[0].style.display = 'block';
+        
+        const form = grandParent.querySelector('form');
+        form[0].focus();
     }
 
     deleteHandler(id: number) {
