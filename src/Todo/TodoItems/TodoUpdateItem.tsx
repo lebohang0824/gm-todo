@@ -61,6 +61,12 @@ export default class TodoUpdateItem  extends React.Component<TodoUpdateItemProps
     onDone(e: any) {
         this.props.onDone(this.props.item);
 
+        if (this.props.item.done) {
+            e.target.innerHTML = 'Redo Task';
+        } else {
+            e.target.innerHTML = 'Task Done';
+        }
+
         const parent = e.target.parentNode;
         const grandParent = parent.parentNode;
         const superGrandParent = grandParent.parentNode;
@@ -83,7 +89,7 @@ export default class TodoUpdateItem  extends React.Component<TodoUpdateItemProps
                 <div className="actions">
                     <button className="save">Save</button>
                     <button type="button" onClick={this.onCancel} className="cancel">Cancel</button>
-                    <button type="button" onClick={this.onDone} className="btn-done">Mark as Done</button>
+                    <button type="button" onClick={this.onDone} className="btn-done">Task Done</button>
                 </div>
             </form>
         );
