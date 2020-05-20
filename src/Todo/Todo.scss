@@ -102,6 +102,13 @@
                         &:hover {
                             background-color: lighten(blue, 15%);                    
                         } 
+                    } 
+                    .btn-done {
+                        float: right;
+                        background-color: lighten(#999, 20%);
+                        &:hover {
+                            background-color: lighten(#999, 15%);                    
+                        } 
                     }                 
                 }
             }

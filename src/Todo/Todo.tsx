@@ -68,15 +68,16 @@ export default class Todo extends React.Component {
     }
 
     updateDoneHandler(item: any) {
-        const tasks: any = this.state.items;
-        const index: number = tasks.findIndex((task: any) => task.id === item.id);
+        console.log(item);
+        // const tasks: any = this.state.items;
+        // const index: number = tasks.findIndex((task: any) => task.id === item.id);
 
-        // New value
-        let task: any = tasks[index];
-        task.title = item.title;
+        // // New value
+        // let task: any = tasks[index];
+        // task.title = item.title;
 
-        // update
-        this.setState({ items: tasks })
+        // // update
+        // this.setState({ items: tasks })
     }
 
     render() {

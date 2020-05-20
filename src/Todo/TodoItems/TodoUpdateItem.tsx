@@ -21,6 +21,7 @@ export default class TodoUpdateItem  extends React.Component<TodoUpdateItemProps
         super(props);
 
         this.onSave = this.onSave.bind(this);
+        this.onDone = this.onDone.bind(this);
         this.onCancel = this.onCancel.bind(this);
         this.onTextUpdate = this.onTextUpdate.bind(this);
     }
@@ -52,6 +53,17 @@ export default class TodoUpdateItem  extends React.Component<TodoUpdateItemProps
         this.setState({ title: this.props.item.title });
     }
 
+    onDone(e: any) {
+        this.props.onDone(this.props.item);
+
+        const parent = e.target.parentNode;
+        const grandParent = parent.parentNode;
+        const superGrandParent = grandParent.parentNode;
+        superGrandParent.getElementsByClassName('info')[0].style.display = 'block';
+        superGrandParent.getElementsByClassName('todo-update-item')[0].style.display = 'none';
+        this.setState({ title: this.props.item.title });
+    }
+
     render() {
         return (
             <form className="todo-update-item" onSubmit={this.onSave}>
@@ -64,6 +76,7 @@ export default class TodoUpdateItem  extends React.Component<TodoUpdateItemProps
                 <div className="actions">
                     <button className="save">Save</button>
                     <button type="button" onClick={this.onCancel} className="cancel">Cancel</button>
+                    <button type="button" onClick={this.onDone} className="btn-done">Mark as Done</button>
                 </div>
             </form>
         );
