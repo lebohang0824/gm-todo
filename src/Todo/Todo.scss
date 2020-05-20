@@ -61,6 +61,9 @@
                         background-color: transparentize(#FFF, .8);                         
                     }
                 }
+                .done {
+                    text-decoration: line-through;;
+                }
             }
             .todo-update-item {
                 display: none;

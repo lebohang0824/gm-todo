@@ -31,7 +31,7 @@ export default class Todo extends React.Component {
             alert("Title required!");
         } else {
             this.setState({
-                items: [{ id, title }, ...this.state.items]
+                items: [{ id, title, done: false }, ...this.state.items]
             });
         }
 

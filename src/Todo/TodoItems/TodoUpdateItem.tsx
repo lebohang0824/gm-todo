@@ -36,7 +36,12 @@ export default class TodoUpdateItem  extends React.Component<TodoUpdateItemProps
 
     onSave(e: any) {
         e.preventDefault();
-        const item = { id: this.props.item.id, title: this.state.title }
+        const item = { 
+            id: this.props.item.id, 
+            title: this.state.title, 
+            done: this.props.item.done 
+        }
+
         this.props.onSave(item);
 
         const parent = e.target.parentNode;
@@ -61,6 +66,8 @@ export default class TodoUpdateItem  extends React.Component<TodoUpdateItemProps
         const superGrandParent = grandParent.parentNode;
         superGrandParent.getElementsByClassName('info')[0].style.display = 'block';
         superGrandParent.getElementsByClassName('todo-update-item')[0].style.display = 'none';
+        // Add or remove line-through
+        superGrandParent.getElementsByTagName('span')[0].classList.toggle('done');
         this.setState({ title: this.props.item.title });
     }
 
