@@ -17,6 +17,7 @@ export default class Todo extends React.Component {
         this.updateHandler = this.updateHandler.bind(this);
         this.deleteHandler = this.deleteHandler.bind(this);
         this.saveUpdateHandler = this.saveUpdateHandler.bind(this);
+        this.updateDoneHandler = this.updateDoneHandler.bind(this);
     }
 
     addHandler(e: any) {
@@ -66,6 +67,18 @@ export default class Todo extends React.Component {
         this.setState({ items });
     }
 
+    updateDoneHandler(item: any) {
+        const tasks: any = this.state.items;
+        const index: number = tasks.findIndex((task: any) => task.id === item.id);
+
+        // New value
+        let task: any = tasks[index];
+        task.title = item.title;
+
+        // update
+        this.setState({ items: tasks })
+    }
+
     render() {
         return (
             <div className="todo">
@@ -75,6 +88,7 @@ export default class Todo extends React.Component {
                     onDelete={this.deleteHandler} 
                     onUpdate={this.updateHandler} 
                     onSave={this.saveUpdateHandler} 
+                    onDone={this.updateDoneHandler} 
                 />
             </div>
         );

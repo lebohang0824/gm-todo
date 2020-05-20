@@ -4,6 +4,7 @@ declare type TodoUpdateItemProps = {
     item: any,
     onSave: any,
     onUpdate: any,
+    onDone: any
 }
 
 declare type TodoUpdateItemState = {
