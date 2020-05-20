@@ -41,11 +41,11 @@ export default class Todo extends React.Component {
 
     saveUpdateHandler(item: any) {
         const tasks: any = this.state.items;
-        const index: number = tasks.findIndex((task: any) => task.id == item.id);
+        const index: number = tasks.findIndex((task: any) => task.id === item.id);
 
         // New value
         let task: any = tasks[index];
-        tasks[index].title = item.title;
+        task.title = item.title;
 
         // update
         this.setState({ items: tasks })
