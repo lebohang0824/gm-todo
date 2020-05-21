@@ -2,6 +2,7 @@ import React from 'react';
 import './Todo.scss';
 
 // Components
+import TodoLanguages from './TodoHeader/TodoLanguages';
 import TodoHeader from './TodoHeader/TodoHeader';
 import TodoItems from './TodoItems/TodoItems';
 
@@ -82,6 +83,7 @@ export default class Todo extends React.Component {
     render() {
         return (
             <div className="todo">
+                <TodoLanguages />
                 <TodoHeader onAddItem={this.addHandler} />
                 <TodoItems 
                     items={this.state.items} 
