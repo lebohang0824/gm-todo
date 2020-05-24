@@ -1,6 +1,9 @@
 .todo {
-    width: 400px;
+    width: 95%;
     margin: 5% auto;
+    @media screen and (min-width: 768px) {
+        width: 400px;
+    }
 
     .todo-languages {
         ul {
@@ -36,7 +39,10 @@
         form {
             display: grid;
             column-gap: 5px;
-            grid-template-columns: 400px 100px;
+            grid-template-columns: 80% 20%;
+            @media screen and (min-width: 768px) {
+                grid-template-columns: 400px 100px;
+            }
             input {
                 border: none;
                 margin: 10px;
